@@ -1,4 +1,4 @@
-# Projeto Hub de Aplicativos
+# 🛠 PROJETO HUB DE APLICATIVOS
 
 ## 📌 Sobre o Projeto
 
