@@ -1,8 +1,8 @@
-# Projeto MultiFerramentas
+# Projeto Hub de Aplicativos
 
 ## 📌 Sobre o Projeto
 
-O projeto Multifunções é uma coleção de automações utilitárias desenvolvidas em Python com foco em produtividade, manipulação de arquivos, downloads e execução de tarefas diversas.
+O projeto Hub de Aplicativos é uma coleção de automações utilitárias desenvolvidas em Python com foco em produtividade, manipulação de arquivos, downloads e execução de tarefas diversas.
 
 Ele foi estruturado com base na ideia do repositório de download de vídeos do YouTube, expandindo para um ambiente mais completo e modular contendo múltiplas funcionalidades em um único script principal (multifuncoes.py).
 
@@ -21,18 +21,23 @@ Centralizar diversas automações úteis em um único projeto Python, permitindo
 - Estrutura simples para expansão futura
 
 ## 🧠 Estrutura do Projeto
-multifuncoes/
-
+```
+HubAplicativos/
 │
-
-├── multifuncoes.py      
-
-├── README.md             
-
-└── tools.ico/           
+├── HubAplicativos.py
+│
+│
+├── assets/  
+│    ├── images/
+│        ├── hub de aplicativos.png
+│    ├── ico/
+│        ├── tools.ico 
+│
+└── README.md
+```
 
 ## 📂 Explicação dos Arquivos
-multifuncoes.py
+HubAplicativos.py
 
 Arquivo principal do sistema.
 
@@ -55,7 +60,7 @@ O projeto utiliza principalmente:
 
 Clone o repositório:
 
-git clone https://github.com/GabrielaSouzaDev/multifuncoes.git
+git clone https://github.com/GabrielaSouzaDev/HubAplicativos.git
 
 
 ## ▶️ Como Executar
@@ -83,30 +88,20 @@ Dependendo das funções implementadas no multifuncoes.py, o sistema pode permit
 🏗️ Estrutura Recomendada para Evolução
 
 Conforme o projeto crescer, recomenda-se modularizar:
-
-multifuncoes/
+```
+HubAplicativos/
 │
-
 ├── modules
-
 │   ├── downloader.py
-
 │   ├── converter.py
-
 │   ├── organizer.py
-
 │   └── utils.py
-
 │
-
 ├── assets/
-
 ├── logs/
-
-├── multifuncoes.py
-
+├── HubAplicativos.py
 └── README.md
-
+```
 
 ## 💡 Melhorias Futuras
 - Interface gráfica melhorada
