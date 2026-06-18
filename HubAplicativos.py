@@ -61,6 +61,16 @@ def tema():
 current_theme = carregar_preferencias()
 ctk.set_appearance_mode(current_theme)
 
+# =================== FUNÇÕES DE TELA E CONTEÚDO DINÂMICO ===================
+from tela_inicial import tela_inicial
+from tela_bot_telegram import tela_bot_telegram
+from tela_consulta_brasil import tela_consulta_brasil
+from tela_youtube_downloader import tela_youtube_downloader
+from tela_conversor_moedas import tela_conversor_moedas
+from tela_calculadora_juros import tela_calculadora_juros
+from tela_calculadora_imc import tela_calculadora_imc
+# =================== FUNÇÕES DE TELA E CONTEÚDO DINÂMICO ===================
+
 app = ctk.CTk()
 app.geometry('900x600')
 app.resizable(False, False)
@@ -112,7 +122,8 @@ ctk.CTkButton(frame_menu,
               border_color=COR_BOTAO_HOVER,
               border_width=1.4,
               font=('Arial', 12, 'bold'),
-              text='Bot Telegram').pack(pady=5, padx=10)
+              text='Bot Telegram',
+              command=lambda: tela_bot_telegram(frame_conteudo)).pack(pady=5, padx=10)
 
 ctk.CTkButton(frame_menu,
               fg_color=COR_BOTAO_NAV,
@@ -124,7 +135,8 @@ ctk.CTkButton(frame_menu,
               border_color=COR_BOTAO_HOVER,
               border_width=1.4,
               font=('Arial', 12, 'bold'),
-              text='Sistema Consulta Brasil').pack(pady=5, padx=10)
+              text='Sistema Consulta Brasil',
+              command=lambda: tela_consulta_brasil(frame_conteudo)).pack(pady=5, padx=10)
 
 ctk.CTkButton(frame_menu,
               fg_color=COR_BOTAO_NAV,
@@ -136,7 +148,8 @@ ctk.CTkButton(frame_menu,
               border_color=COR_BOTAO_HOVER,
               border_width=1.4,
               font=('Arial', 12, 'bold'),
-              text='Youtube Downloader').pack(pady=5, padx=10)
+              text='Youtube Downloader',
+              command=lambda: tela_youtube_downloader(frame_conteudo)).pack(pady=5, padx=10)
 
 ctk.CTkButton(frame_menu,
               fg_color=COR_BOTAO_NAV,
@@ -148,7 +161,8 @@ ctk.CTkButton(frame_menu,
               border_color=COR_BOTAO_HOVER,
               border_width=1.4,
               font=('Arial', 12, 'bold'),
-              text='Conversor de Moedas').pack(pady=5, padx=10)
+              text='Conversor de Moedas',
+              command=lambda: tela_conversor_moedas(frame_conteudo)).pack(pady=5, padx=10)
 
 ctk.CTkButton(frame_menu,
               fg_color=COR_BOTAO_NAV,
@@ -160,7 +174,8 @@ ctk.CTkButton(frame_menu,
               border_color=COR_BOTAO_HOVER,
               border_width=1.4,
               font=('Arial', 12, 'bold'),
-              text='Calculadora Juros').pack(pady=5, padx=10)
+              text='Calculadora Juros',
+              command=lambda: tela_calculadora_juros(frame_conteudo)).pack(pady=5, padx=10)
 
 ctk.CTkButton(frame_menu,
               fg_color=COR_BOTAO_NAV,
@@ -172,7 +187,8 @@ ctk.CTkButton(frame_menu,
               border_color=COR_BOTAO_HOVER,
               border_width=1.4,
               font=('Arial', 12, 'bold'),
-              text='Calculadora de IMC').pack(pady=(5, 20), padx=10)
+              text='Calculadora de IMC',
+              command=lambda: tela_calculadora_imc(frame_conteudo)).pack(pady=(5, 20), padx=10)
 
 
 # Modo claro/escuro
@@ -191,6 +207,8 @@ ctk.CTkLabel(frame_menu,
              text='V1.0',
              text_color=COR_TEXTO,
              font=('Arial', 10, 'bold')).pack(pady=5, padx=10, side='bottom')
+# Carrega a tela inicial no painel de conteúdo
+tela_inicial(frame_conteudo)
 # =========================  ESTRUTURA DA INTERFACE GRÁFICA =========================
 
 # ================================ LOOP DA APLICAÇÃO ================================
