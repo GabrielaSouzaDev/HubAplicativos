@@ -50,6 +50,10 @@ def tema():
     novo_modo = 'dark' if modo_atual == 'light' else 'light'
     ctk.set_appearance_mode(novo_modo)
     salvar_preferencias(novo_modo)
+    try:
+        tema.configure(text='Modo Claro' if novo_modo == 'dark' else 'Modo Escuro')
+    except NameError:
+        pass
 # =========================  FUNÇÕES DE PREFERÊNCIAS E TEMAS =========================
 
 # =========================  CONFIGURAÇÕES JANELA PRINCIPAL =========================
@@ -173,12 +177,14 @@ ctk.CTkButton(frame_menu,
 
 # Modo claro/escuro
 modo_var = ctk.IntVar(value=1 if current_theme == 'dark' else 0)
-ctk.CTkSwitch(frame_menu,
-           text='Modo Escuro',
+modo_text = 'Modo Claro' if current_theme == 'dark' else 'Modo Escuro'
+tema = ctk.CTkSwitch(frame_menu,
+           text=modo_text,
            text_color=COR_TEXTO,
            font=('Arial', 12, 'bold'),
            variable=modo_var,
-            command=tema).pack(pady=(10, 0), padx=10)
+           command=tema)
+tema.pack(pady=(10, 0), padx=10)
 
 # Versão
 ctk.CTkLabel(frame_menu,
